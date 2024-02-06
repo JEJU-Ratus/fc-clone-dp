@@ -5,7 +5,11 @@ const Nav = () => {
   return (
     <NavWrapper>
       <Logo>
-        
+        <img
+          alt='disney plus logo'
+          src='/images/logo.svg'
+          onClick={()=> (window.location.href = '/')}
+        />
       </Logo>
     </NavWrapper>
   )
@@ -35,4 +39,8 @@ margin-top: 4px;
 max-height: 70px;
 font-size: 0;
 display: inline-block;
+
+img{
+  width: 100%;
+}
 `
