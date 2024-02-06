@@ -1,0 +1,26 @@
+
+/*a 태그 링크옵션*/
+
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: underline;
+}
+/*margin padding 초기화 */
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: -apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* 브라우저는 이미지를 글씨로 이해함. 그러므로 블록으로 만들어서 높이를 조절 */
+/* 글씨에는 베이스라인이라는 것이 있어서 그것에 영향을 받지 않게 하기 위함. */
+img{
+    display: block;
+    /* 혹은 vertical-align:top; 이란걸 사용해도 되긴함. */
+}
