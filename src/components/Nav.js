@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import styled from'styled-components'
+import React, { useEffect, useState } from 'react';
+import styled from'styled-components';
 
 const Nav = () => {
 
@@ -12,12 +12,13 @@ const Nav = () => {
       } else {
         setShow(false);
       }
-    })
+    });
   
     return () => {
       window.removeEventListener('scroll',()=>{})
     }
   }, [])
+
   
   return (
     <NavWrapper $show={show}>
@@ -39,7 +40,7 @@ const NavWrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: ${props => props.show ? '#090b13':'transparent'};
+  background-color: ${props => props.$show ? '#090b13':'transparent'};
   height: 70px;
   letter-spacing: 16px;
   position: fixed;
