@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from '../api/axios';
-import requests from '../api/request'
+import requests from '../api/request';
+import './Banner.css';
 
 const Banner = () => {
 
   const [movie, setMovie] = useState([])
   useEffect(() => {
     fetchData();
-  
-    return () => {
-      
-    }
   }, [])
 
   const fetchData = async() => {
@@ -20,12 +17,12 @@ const Banner = () => {
     const { data : movieDetail } = await axios.get(`movie/${movieId}`,{ params : { append_to_response: "videos"} })
     setMovie(movieDetail);
   }
-  
   return (
     <header 
     className='banner' 
     style={{
-      backgroundImage : `url("https://image.tmdb.org/t/p/original/${movie.backdrop_path}")`,
+      backgroundImage : movie?.backdrop_path? `url("https://image.tmdb.org/t/p/original/${movie.backdrop_path}")`
+      : 'none',
       backgorundPosition : "top center",
       backgroundSize: "cover"
     }}>
