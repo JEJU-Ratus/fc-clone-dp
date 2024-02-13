@@ -17,6 +17,11 @@ const Banner = () => {
     const { data : movieDetail } = await axios.get(`movie/${movieId}`,{ params : { append_to_response: "videos"} })
     setMovie(movieDetail);
   }
+
+  const truncate = (str, n) => {
+    return str?.length > n ? str.substring(0,n) + "..." : str;
+  }
+
   return (
     <header 
     className='banner' 
@@ -38,9 +43,9 @@ const Banner = () => {
           </button>
           }
         </div>
-        <p className='banner__description'>
-          {movie.overview}
-        </p>
+        <h2 className='banner__description'>
+          {truncate(movie.overview, 100)}
+        </h2>
       </div>
       <div className='banner--fadeBottom' />
     </header>
