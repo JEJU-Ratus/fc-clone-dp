@@ -23,6 +23,7 @@ const Row = ({title, id, fetchUrl}) => {
           <span className="arrow"
           onClick={()=>{
             document.getElementById(id).scrollLeft -= window.innerWidth - 80;
+            console.log(document.getElementById(id).scrollLeft);
           }}>
             {"<"}
           </span>
