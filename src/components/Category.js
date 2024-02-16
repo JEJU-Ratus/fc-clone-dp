@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from "styled-components"
+import '../common.css'
 
 const Category = () => {
   return (
     <Container>
+      <h2 className='blind'>영화 카테고리</h2>
       <Wrap>
         <img src="/images/viewers-disney.png" alt="디즈니 로고" />
         <video autoPlay loop muted>
@@ -40,7 +42,7 @@ const Category = () => {
 
 export default Category
 
-const Container = styled.div`
+const Container = styled.section`
   display: grid;
   margin-top: 30px;
   padding: 30px 0 26px;
