@@ -8,15 +8,19 @@ import request from './api/request';
 
 function App() {
   return (
-    <Container>
+    <>
+    <header>
       <Nav />
       <Banner />
+    </header>
+    <Container>
       <Category />
       <Row title="Transding Now" id="TN" fetchUrl={request.fetchTrending} />
       <Row title="Top Rated" id="TR" fetchUrl={request.fetchTopRated} />
       <Row title="Action Movies" id="AM" fetchUrl={request.fetchActionMovies} />
       <Row title="Comedy Movies" id="CM" fetchUrl={request.fetchComedyMovies} />
     </Container>
+    </>
   );
 }
 
