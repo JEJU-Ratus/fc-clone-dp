@@ -43,7 +43,7 @@ const Banner = () => {
   } 
   else {
     return (
-      <header 
+      <section
       className='banner' 
       style={{
         backgroundImage : movie?.backdrop_path? `url("https://image.tmdb.org/t/p/original/${movie.backdrop_path}")`
@@ -69,7 +69,7 @@ const Banner = () => {
           </h2>
         </div>
         <div className='banner--fadeBottom' />
-      </header>
+      </section>
     )
   }
 }
