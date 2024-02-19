@@ -14,7 +14,7 @@ const MovieModal = ({
   return (
     <div className='presentation' role="presentation">
       <div className='wrapper-modal'>
-        <div className='modal' ref={ref}>
+        <div className='modal'>
           <span
             onClick={() => setModalOpen(false)}
             className="modal-close"
