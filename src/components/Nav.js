@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import styled from'styled-components';
+import { useLocation } from 'react-router-dom';
+import styled from 'styled-components';
 
 const Nav = () => {
 
   const [show, setShow] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    window.addEventListener('scroll', ()=> {
-      if(window.scrollY > 50){
-        setShow(true);
-      } else {
-        setShow(false);
-      }
-    });
+    window.addEventListener('scroll', handleScroll);
   
     return () => {
-      window.removeEventListener('scroll',()=>{})
+      window.removeEventListener('scroll',handleScroll);
     }
   }, [])
 
+  const handleScroll = () => {
+    if(window.scrollY > 50){
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  }
   
   return (
     <NavWrapper $show={show}>
@@ -29,11 +32,23 @@ const Nav = () => {
           onClick={()=> (window.location.href = '/')}
         />
       </Logo>
+      { pathname === '/' ?
+        (<Login>Login</Login>) :
+        (<Input className='nav__input' type='text' placeholder='검색어를 입력하세요.'></Input>)
+      }
     </NavWrapper>
   )
 }
 
 export default Nav
+
+const Login = styled.a`
+
+`;
+
+const Input = styled.input`
+
+`;
 
 const NavWrapper = styled.nav`
   padding: 0 36px;
